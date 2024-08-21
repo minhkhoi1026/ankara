@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ankara:
+    image: minhkhoi1026/ankara:latest
+    tty: true
+    ipc: host
+    volumes:
+      - type: bind
+        source: ./secret
+        target: /app/secret
+    environment:
+      - PORT=26100
+    ports:
+      - "26100:26100"
